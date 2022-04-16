@@ -68,7 +68,7 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    [SerializeField] private GameObject target;
     [SerializeField] private Transform[] Spots;
     [SerializeField] private float speed = 5f;
 
@@ -79,8 +79,10 @@ public class EnemyAI : MonoBehaviour
     bool isPatrolling = true;
     bool isCome = true;
     Vector2 direction;
+
     float waitTime = 0f;
     float goBackTime = 0f;
+    float attackTime = 0f;
 
     Animator animator;
     Rigidbody2D rb;
@@ -126,7 +128,7 @@ public class EnemyAI : MonoBehaviour
         }
         else if (!isPatrolling)
         {
-            p = seeker.StartPath(rb.position, target.position);
+            p = seeker.StartPath(rb.position, target.transform.position);
             if (!p.error)
             {
                 path = p;
@@ -143,6 +145,13 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()//////////////////////////////////////////////////////////////////////////////////////////////////////////
     {
+        if (Vector2.Distance(rb.position, target.transform.position) < 1f && attackTime < 0f)
+        {
+            target.GetComponent<HeroHealf>().Damage();
+            attackTime = 1.5f;
+        }
+        attackTime -= Time.deltaTime;
+
         if (path == null || currentWaypoint >= path.vectorPath.Count)
             return;
 
@@ -180,7 +189,7 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
-        if (Vector2.Distance(rb.position, target.position) < 7f)
+        if (Vector2.Distance(rb.position, target.transform.position) < 7f)
         {
             isPatrolling = false;
             waitTime = -0.1f;
