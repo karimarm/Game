@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class HeroHealf : MonoBehaviour
+public class PlayerHealf : MonoBehaviour
 {
     public static int healf = 7;
     public static int maxHealf = 7;

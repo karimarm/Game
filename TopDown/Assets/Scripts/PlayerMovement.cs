@@ -17,8 +17,6 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     Vector2 shoot = Vector2.zero;
 
-    public int money = 0;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -70,18 +68,5 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
         sprite.flipX = movement.x < 0.0f;
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Bonus")
-        {
-            if (other.gameObject.name == "Coin" || other.gameObject.name == "Coin(Clone)")
-            {
-                money++;
-                PlayerPrefs.SetInt("Money", money);
-            }
-            Destroy(other.gameObject);
-        }
     }
 }

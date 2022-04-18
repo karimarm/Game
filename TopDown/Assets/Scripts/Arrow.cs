@@ -5,7 +5,6 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     [SerializeField] private float speed = 15f;
-    EnemyHealf enemyHealf;
     Rigidbody2D rb;
 
     private float damage = 35f;

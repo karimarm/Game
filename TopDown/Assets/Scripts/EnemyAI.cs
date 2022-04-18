@@ -147,7 +147,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (Vector2.Distance(rb.position, target.transform.position) < 1f && attackTime < 0f)
         {
-            target.GetComponent<HeroHealf>().Damage();
+            target.GetComponent<PlayerHealf>().Damage();
             attackTime = 1.5f;
         }
         attackTime -= Time.deltaTime;

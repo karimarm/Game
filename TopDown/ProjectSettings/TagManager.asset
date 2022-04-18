@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Bonus
+  - Thing
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,7 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 2158406819
+    locked: 0
+  - name: Canvas
+    uniqueID: 4288681011
     locked: 0
