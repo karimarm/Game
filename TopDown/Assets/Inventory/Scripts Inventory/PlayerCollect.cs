@@ -1,21 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCollect : MonoBehaviour
 {
-    public int money = 0;
+    [SerializeField] private Text coinText;
+    [SerializeField] private Text gemText;
+    public int coin = 0;
+    public int gem = 0;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Bonus")
         {
-            if (other.gameObject.name == "Coin" || other.gameObject.name == "Coin(Clone)")
+            if (other.gameObject.name.Contains("Coin"))
             {
-                money++;
-                PlayerPrefs.SetInt("Money", money);
+                coin++;
+                PlayerPrefs.SetInt("Coin", coin);
+            }
+            if (other.gameObject.name.Contains("Gem"))
+            {
+                gem++;
+                PlayerPrefs.SetInt("Gem", gem);
             }
             Destroy(other.gameObject);
         }
+        coinText.text = coin.ToString();
+        gemText.text = gem.ToString();
     }
 }

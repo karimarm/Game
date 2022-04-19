@@ -22,8 +22,6 @@ public class PlayerHealf : MonoBehaviour
         if (maxHealf > 7) maxHealf = 7;
         if (healf > maxHealf) healf = maxHealf;
 
-        Debug.Log(healf + " " + maxHealf);
-
         for (int i = 0; i < maxHealf; i++)
         {
             if (i + healf < maxHealf)
