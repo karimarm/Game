@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class PlayerHealf : MonoBehaviour
 {
-    public static int healf = 7;
-    public static int maxHealf = 7;
+    public static int healf = 2;
+    public static int maxHealf = 4;
     [SerializeField] private Sprite heartOn;
     [SerializeField] private Sprite heartOff;
     [SerializeField] private Image[] hearts;
     SpriteRenderer sprite;
+
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -18,6 +19,11 @@ public class PlayerHealf : MonoBehaviour
 
     void Update()
     {
+        if (maxHealf > 7) maxHealf = 7;
+        if (healf > maxHealf) healf = maxHealf;
+
+        Debug.Log(healf + " " + maxHealf);
+
         for (int i = 0; i < maxHealf; i++)
         {
             if (i + healf < maxHealf)
@@ -25,10 +31,10 @@ public class PlayerHealf : MonoBehaviour
             else
                 hearts[i].sprite = heartOn;
         }
+        for (int i = 0; i < maxHealf; i++)
+            hearts[i].enabled = true;
         for (int i = maxHealf; i < 7; i++)
-        {
             hearts[i].enabled = false;
-        }
     }
 
     public void Damage()

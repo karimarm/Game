@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Inventory : MonoBehaviour
 {
@@ -21,5 +22,27 @@ public class Inventory : MonoBehaviour
         else
             inventory.SetActive(true);
         inventoryOn = !inventoryOn;
+    }
+
+    public void SendMessage(string message)
+    {
+        int num = Convert.ToInt32(message);
+        if (slots[num].transform.childCount > 0)
+        {
+            switch (slots[num].transform.GetChild(0).gameObject.name)
+            {
+                case "Small Elixir Icon(Clone)":
+                    PlayerHealf.healf++;
+                    break;
+                case "Big Elixir Icon(Clone)":
+                    PlayerHealf.healf = PlayerHealf.maxHealf;
+                    break;
+                case "Heart Elixir Icon(Clone)":
+                    PlayerHealf.maxHealf++;
+                    PlayerHealf.healf++;
+                    break;
+            }
+            Destroy(slots[num].transform.GetChild(0).gameObject);
+        }
     }
 }

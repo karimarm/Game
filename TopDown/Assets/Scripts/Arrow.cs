@@ -34,7 +34,7 @@ public class Arrow : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Bonus")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Bonus" || other.gameObject.tag == "Thing")
             return;
         if (other.gameObject.tag == "Enemy")
         {
