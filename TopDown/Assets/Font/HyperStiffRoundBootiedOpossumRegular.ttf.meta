@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 733ee921fc5ea8e4791e7625cda90441
+guid: 20506a057e3acfd4aa7eccdc5c7ad13c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 500
+  fontSize: 16
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Teletactile
+  - Hyper-Stiff Round-Bootied Opossum
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 2
+  fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

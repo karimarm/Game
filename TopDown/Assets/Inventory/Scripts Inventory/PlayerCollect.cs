@@ -7,8 +7,8 @@ public class PlayerCollect : MonoBehaviour
 {
     [SerializeField] private Text coinText;
     [SerializeField] private Text gemText;
-    public int coin = 0;
-    public int gem = 0;
+    public static int coin = 0;
+    public static int gem = 0;
 
     void OnTriggerEnter2D(Collider2D other)
     {

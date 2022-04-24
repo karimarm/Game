@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerHealf : MonoBehaviour
 {
-    public static int healf = 2;
-    public static int maxHealf = 4;
+    public static int healf = 3;
+    public static int maxHealf = 3;
     [SerializeField] private Sprite heartOn;
     [SerializeField] private Sprite heartOff;
     [SerializeField] private Image[] hearts;

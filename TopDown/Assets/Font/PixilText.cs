@@ -7,6 +7,6 @@ public class PixilText : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<Text>().font.material.mainTexture.filterMode = FilterMode.Point;
+        //GetComponent<Text>().font.material.mainTexture.filterMode = FilterMode.Point;
     }
 }

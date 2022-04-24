@@ -31,17 +31,18 @@ public class Inventory : MonoBehaviour
         {
             switch (slots[num].transform.GetChild(0).gameObject.name)
             {
-                case "Small Elixir Icon(Clone)":
+                case "SmallElixirIcon(Clone)":
                     PlayerHealf.healf++;
                     break;
-                case "Big Elixir Icon(Clone)":
+                case "BigElixirIcon(Clone)":
                     PlayerHealf.healf = PlayerHealf.maxHealf;
                     break;
-                case "Heart Elixir Icon(Clone)":
+                case "HeartElixirIcon(Clone)":
                     PlayerHealf.maxHealf++;
                     PlayerHealf.healf++;
                     break;
             }
+            cells[num] = false;
             Destroy(slots[num].transform.GetChild(0).gameObject);
         }
     }

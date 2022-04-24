@@ -23,7 +23,6 @@ public class EnemyHealf : MonoBehaviour
         canvas = healfLine.gameObject.GetComponentInParent<Canvas>();
         canvas.enabled = false;
         healf = maxHealf;
-        Debug.Log(maxHealf);
     }
 
     public void Damage(float damage)
